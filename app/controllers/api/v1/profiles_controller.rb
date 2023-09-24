@@ -20,7 +20,7 @@ class Api::V1::ProfilesController < ApplicationController
     if @profile.save
       render json: @profile, status: :created, location: api_v1_profile_url(@profile)
     else
-      render json: @profile.errors, status: :unprocessable_entity
+      render json: @profile.errors , status: :unprocessable_entity
     end
   end
 
@@ -37,6 +37,7 @@ class Api::V1::ProfilesController < ApplicationController
   def destroy
     @profile.destroy
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
